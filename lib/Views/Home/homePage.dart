@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:like_button/like_button.dart';
 import 'package:mohandem_customer/Components/color.dart';
-import 'package:mohandem_customer/Components/textStyle.dart';
+import 'package:mohandem_customer/Views/Home/Order/orderList.dart';
 import 'package:mohandem_customer/Views/Home/Repo/homeController.dart';
 import 'package:mohandem_customer/Views/Home/Setting/settings.dart';
-import 'package:mohandem_customer/Views/Home/appointment/deliveiries.dart';
+import 'package:mohandem_customer/Views/Home/appointment/prices.dart';
 import 'package:mohandem_customer/Views/Home/home.dart';
 import 'package:mohandem_customer/Views/Home/notification.dart';
 
@@ -25,9 +24,9 @@ class HomePage extends StatelessWidget {
             index: controller.index,
             children: [
               Dashboard(),
-              Deliveries(),
+              Prices(),
               Notifications(),
-              Settings(),
+              OrderList(),
               Settings(),
             ],
           ),
@@ -55,8 +54,8 @@ class HomePage extends StatelessWidget {
                             DynamicColors.primaryColor.withOpacity(0.5)),
                     size: width / 5.3,
                     likeBuilder: (bool isLiked) {
-                      return  ImageIcon(
-                        AssetImage("assets/myOrder.png",),
+                      return  Icon(
+                        Icons.home_outlined,
                         size: 30,
                         color: controller.index == 0
                             ? DynamicColors.primaryColor
@@ -82,7 +81,7 @@ class HomePage extends StatelessWidget {
                             DynamicColors.primaryColor.withOpacity(0.5)),
                     likeBuilder: (bool isLiked) {
                       return ImageIcon(
-                        AssetImage("assets/myOrder.png",),
+                        AssetImage("assets/priceBottom.png",),
                         size: 30,
 
                         color: controller.index == 1
@@ -108,8 +107,8 @@ class HomePage extends StatelessWidget {
                             DynamicColors.primaryColor.withOpacity(0.5)),
                     size: width / 5.3,
                     likeBuilder: (bool isLiked) {
-                      return ImageIcon(
-                        AssetImage("assets/myOrder.png",),
+                      return Icon(
+                        Icons.notifications,
                         size: 30,
                         // height: kToolbarHeight - 30,
                         // width: 40,
@@ -137,7 +136,7 @@ class HomePage extends StatelessWidget {
                     size: width / 5.3,
                     likeBuilder: (bool isLiked) {
                       return ImageIcon(
-                        AssetImage("assets/myOrder.png",),
+                        AssetImage("assets/orderBottom.png",),
                         size: 30,
                         color: controller.index == 3
                             ? DynamicColors.primaryColor
@@ -163,7 +162,7 @@ class HomePage extends StatelessWidget {
                     size: width / 5.3,
                     likeBuilder: (bool isLiked) {
                       return ImageIcon(
-                        AssetImage("assets/cart.png"),
+                        AssetImage("assets/profile.png"),
                         size: 30,
                         color: controller.index == 4
                             ? DynamicColors.primaryColor

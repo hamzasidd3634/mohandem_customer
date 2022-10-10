@@ -1,11 +1,24 @@
 
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mohandem_customer/Model/appointmentModel.dart';
+import 'package:mohandem_customer/Views/Home/Order/orderList.dart';
+import 'package:mohandem_customer/Views/Home/Setting/settings.dart';
+import 'package:mohandem_customer/Views/Home/appointment/prices.dart';
+import 'package:mohandem_customer/Views/Home/home.dart';
+import 'package:mohandem_customer/Views/Home/notification.dart';
 
 class HomePageController extends GetxController{
 
   int page = 0;
   int index = 0;
+  List<Widget> pageList = [
+    Dashboard(),
+    Prices(),
+    Notifications(),
+    OrderList(fromMain:true),
+    Settings(),
+  ];
   List<AppointmentModel> appointmentList = [
     AppointmentModel(
         name: "Mahboob Ahmed",

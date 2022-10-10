@@ -15,7 +15,7 @@ class ForgotPassword extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomAppBar(
+    return CustomAppBarNoController(
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Column(

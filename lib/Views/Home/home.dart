@@ -29,12 +29,17 @@ class Dashboard extends StatelessWidget {
                   children: [
                     SizedBox(
                       width: MediaQuery.of(context).size.width*0.3,
-                      child: Column(
-                        children: [
-                          Image.asset("assets/cart.png",height: MediaQuery.of(context).size.height/10,),
-                          Text("Place Order",style: poppinsStyle(color: DynamicColors.primaryColor),),
+                      child: GestureDetector(
+                        onTap: (){
+                          Get.toNamed(Routes.orderCalendar);
+                        },
+                        child: Column(
+                          children: [
+                            Image.asset("assets/cart.png",height: MediaQuery.of(context).size.height/10,),
+                            Text("Place Order",style: poppinsStyle(color: DynamicColors.primaryColor),),
 
-                        ],
+                          ],
+                        ),
                       ),
                     ),
                     SizedBox(width: 10,),
@@ -44,12 +49,18 @@ class Dashboard extends StatelessWidget {
                     SizedBox(width: 10,),
                     SizedBox(
                       width: MediaQuery.of(context).size.width*0.3,
-                      child: Column(
-                        children: [
-                          Image.asset("assets/myOrder.png",height: MediaQuery.of(context).size.height/10,),
-                          Text("My Order",style: poppinsStyle(color: DynamicColors.primaryColor),),
+                      child: GestureDetector(
+                        onTap: (){
+                          controller.index = 3;
+                          controller.update();
+                        },
+                        child: Column(
+                          children: [
+                            Image.asset("assets/myOrder.png",height: MediaQuery.of(context).size.height/10,),
+                            Text("My Order",style: poppinsStyle(color: DynamicColors.primaryColor),),
 
-                        ],
+                          ],
+                        ),
                       ),
                     ),
                   ],
@@ -70,8 +81,8 @@ class Dashboard extends StatelessWidget {
                       width: MediaQuery.of(context).size.width*0.3,
                       child: Column(
                         children: [
-                          Image.asset("assets/cart.png",height: MediaQuery.of(context).size.height/12,),
-                          Text("Place Order",style: poppinsStyle(color: DynamicColors.primaryColor),),
+                          Image.asset("assets/price.png",height: MediaQuery.of(context).size.height/12,),
+                          Text("Price",style: poppinsStyle(color: DynamicColors.primaryColor),),
                         ],
                       ),
                     ),
@@ -82,11 +93,16 @@ class Dashboard extends StatelessWidget {
                     SizedBox(width: 10,),
                     SizedBox(
                       width: MediaQuery.of(context).size.width*0.3,
-                      child: Column(
-                        children: [
-                          Image.asset("assets/about.png",height: MediaQuery.of(context).size.height/12,),
-                          Text("About",style: poppinsStyle(color: DynamicColors.primaryColor),),
-                        ],
+                      child: GestureDetector(
+                        onTap: (){
+                          Get.toNamed(Routes.about);
+                        },
+                        child: Column(
+                          children: [
+                            Image.asset("assets/about.png",height: MediaQuery.of(context).size.height/12,),
+                            Text("About",style: poppinsStyle(color: DynamicColors.primaryColor),),
+                          ],
+                        ),
                       ),
                     ),
                   ],

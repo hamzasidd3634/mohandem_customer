@@ -21,6 +21,7 @@ class Settings extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomAppBar(
+      fromMain: false,
       leading: Container(),
         isDivider: true,
         action: Padding(

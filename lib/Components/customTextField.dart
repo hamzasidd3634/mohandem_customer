@@ -15,6 +15,7 @@ class CustomTextField extends StatelessWidget {
         this.borderColor = true,
         this.focus = false,
         this.maxLines = 1,
+        this.minLines = 1,
         this.prefixIcons,
         this.onlyRead = true,
         this.validationError,
@@ -28,6 +29,7 @@ class CustomTextField extends StatelessWidget {
         this.hintStyle,
         this.borderWidth,
         this.decoration,
+        this.underLineColor,
         this.suffixContentPadding,
         this.onFieldSubmitted,
         this.cursorColor,
@@ -49,6 +51,8 @@ class CustomTextField extends StatelessWidget {
   bool? borderColor = true;
   bool? isHintLabel = false;
   int? maxLines;
+  int? minLines;
+  Color? underLineColor;
   Widget? prefixIcons;
   List<TextInputFormatter>? inputFormatter;
   BoxDecoration? decoration;
@@ -94,7 +98,7 @@ class CustomTextField extends StatelessWidget {
       decoration: buildInputDecoration(),
       readOnly: !onlyRead!,
       maxLines: maxLines,
-      minLines: 1,
+      minLines: minLines,
       obscureText: obscureText!,
       validator: (value) {
         if (value!.isEmpty) {
@@ -129,17 +133,18 @@ class CustomTextField extends StatelessWidget {
                     top: 10,
                   )),
         border: UnderlineInputBorder(
-            borderSide: BorderSide(color: DynamicColors.blackColor)),
+            borderSide: BorderSide(color:underLineColor?? DynamicColors.blackColor)),
         enabledBorder: UnderlineInputBorder(
-            borderSide: BorderSide(color: DynamicColors.blackColor)),
+            borderSide: BorderSide(color:underLineColor?? DynamicColors.blackColor)),
         focusedBorder: UnderlineInputBorder(
-            borderSide: BorderSide(color: DynamicColors.blackColor)),
+            borderSide: BorderSide(color:underLineColor?? DynamicColors.blackColor)),
         hintText: hintText,
         hintStyle: hintStyle ??
             montserratStyle(
                 fontSize: 15, color: DynamicColors.blackColor.withOpacity(0.5)),
         helperStyle: montserratStyle(),
         suffixIcon: suffix,
+
         prefixIcon: prefixIcons,
       );
     }
@@ -154,11 +159,11 @@ class CustomTextField extends StatelessWidget {
             top: 10,
           )),
       border: UnderlineInputBorder(
-          borderSide: BorderSide(color: DynamicColors.blackColor)),
+          borderSide: BorderSide(color:underLineColor?? DynamicColors.blackColor)),
       enabledBorder: UnderlineInputBorder(
-          borderSide: BorderSide(color: DynamicColors.blackColor)),
+          borderSide: BorderSide(color:underLineColor?? DynamicColors.blackColor)),
       focusedBorder: UnderlineInputBorder(
-          borderSide: BorderSide(color: DynamicColors.blackColor)),
+          borderSide: BorderSide(color:underLineColor?? DynamicColors.blackColor)),
       labelText: hintText,
       labelStyle: hintStyle ??
           montserratStyle(

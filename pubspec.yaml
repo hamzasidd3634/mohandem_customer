@@ -38,6 +38,9 @@ dependencies:
   bot_toast:
   flutter_local_notifications: ^9.5.3+1
   flutter_polygon: ^0.3.0+2
+  table_calendar: ^3.0.7
+  flutter_rating_bar: ^4.0.1
+
   photo_view:
   dio: ^4.0.6
   flutter_svg: ^1.1.5

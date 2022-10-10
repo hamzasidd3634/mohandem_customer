@@ -7,6 +7,7 @@ class DynamicColors {
   // static Color camColor = Color(0xffd51820);
   static Color whiteColor = Color(0xffFFFFFF);
   static Color blackColor = Color(0xff171717);
+  static Color transparent = Colors.transparent ;
   static Color backBtnColor = Color(0xff195CFE);
   static Color businessSecondaryColor = Color(0xff0054E8);
   static Color reportBtnColor = Color(0xff529CFE);
